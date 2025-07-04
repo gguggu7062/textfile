@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, render_template_string
+from flask import Flask, request, send_file, render_template  # render_template로 변경
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -6,29 +6,12 @@ import re
 
 app = Flask(__name__)
 
-HTML_FORM = """
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>포스타입 텍스트파일</title>
-</head>
-<body>
-  <h2>postype only❤️</h2>
-  <form action="/extract" method="post">
-    <input type="text" name="url" placeholder="URL을 입력하세요" style="width: 400px;" required>
-    <button type="submit">텍스트 추출 & 다운로드</button>
-  </form>
-</body>
-</html>
-"""
-
 def sanitize_filename(name):
     return re.sub(r'[\\/*?:"<>|]', '', name)
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template_string(HTML_FORM)
+    return render_template("mainpage.html")  
 
 @app.route("/extract", methods=["POST"])
 def extract():
@@ -60,9 +43,6 @@ def extract():
     except Exception as e:
         return f"<h3>에러 발생: {str(e)}</h3>"
 
-import os
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
-

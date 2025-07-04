@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'S-CoreDream-3Light', sans-serif;
+  }
+
+
+.title{
+    text-align: center;
+    font-size: 75px;
+}
+
+.input{
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    padding: 30px;
+    font-family: 'S-CoreDream-3Light', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    border-color: black;
+    border-radius: 30px;
+}
+
+input::placeholder {
+    font-family: 'S-CoreDream-3Light', sans-serif;
+    font-size: 30px;
+    color: #555;
+}
+
+input:focus {
+    border-color: black; /* 원하는 색으로 변경 */
+    outline: none; /* 기본 파란색 외곽선 제거 */
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.button{
+    display: block; 
+    margin: 0 auto; 
+    width: 200px; 
+    padding: 20px; 
+    color: white; 
+    background-color: black; 
+    border: none; 
+    border-radius: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.waring{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+.question{
+    text-align: center;
+    font-size: 35px;
+    margin-top: 100px;
+}
+
+.hyperlink{
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    /*text-decoration-line: none;*/
+}
+
+A:link{
+    color: black;
+}
+A:visited{
+    color: gray;
+}
+A:hover{
+    color: gold;
+}
